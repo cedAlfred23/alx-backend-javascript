@@ -1,18 +1,18 @@
 export default class Building {
   constructor(sqft) {
+    // Any class extending Building must implement below method
+    if (this.constructor !== Building && !this.evacuationWarningMessage) throw Error('Class extending Building must override evacuationWarningMessage');
+
+    // Create objs
     this._sqft = sqft;
-    console.log(this.#evacuationWarningMessage())
   }
 
+  // Methods
+
+  // Setters
+
+  // Getters
   get sqft() {
     return this._sqft;
   }
-
-  set sqft(sqft) {
-    this._sqft = sqft;
-  }
-
- #evacuationWarningMessage(){
-  return 'Hey There'
- }
 }
